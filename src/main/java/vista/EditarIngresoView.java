@@ -16,7 +16,7 @@ public class EditarIngresoView extends JFrame {
     public EditarIngresoView(int transaccionId, double monto, String categoria, Date fecha, String nombre, String nota) {
         this.transaccionId = transaccionId;
         setTitle("Smart Pocket - Editar Ingreso");
-        setSize(500, 450);
+        setSize(500, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
