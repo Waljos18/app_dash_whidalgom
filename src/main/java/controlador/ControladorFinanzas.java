@@ -323,9 +323,9 @@ public class ControladorFinanzas {
         double balance = modelo.calcularBalance(usuarioId);
         reporte.append("=== REPORTE FINANCIERO ===\n\n");
         reporte.append("1. Balance General:\n");
-        reporte.append(String.format("Total Ingresos: $%.2f\n", totalIngresos));
-        reporte.append(String.format("Total Gastos: $%.2f\n", totalGastos));
-        reporte.append(String.format("Balance Neto: $%.2f\n", balance));
+        reporte.append(String.format("Total Ingresos: S/%.2f\n", totalIngresos));
+        reporte.append(String.format("Total Gastos: S/%.2f\n", totalGastos));
+        reporte.append(String.format("Balance Neto: S/%.2f\n", balance));
         if (totalIngresos > 0) {
             double porcentajeGastos = (totalGastos / totalIngresos) * 100;
             reporte.append(String.format("Porcentaje de Gastos respecto a Ingresos: %.2f%%\n", porcentajeGastos));
@@ -336,12 +336,12 @@ public class ControladorFinanzas {
         reporte.append("2. Desglose de Ingresos:\n");
         Map<String, Double> ingresosPorCategoria = modelo.getIngresosPorCategoria(usuarioId);
         for (Map.Entry<String, Double> entry : ingresosPorCategoria.entrySet()) {
-            reporte.append(String.format("- %s: $%.2f\n", entry.getKey(), entry.getValue()));
+            reporte.append(String.format("- %s: S/%.2f\n", entry.getKey(), entry.getValue()));
         }
         reporte.append("\nTransacciones Recientes (Ingresos):\n");
         for (Transaccion t : modelo.getTransacciones(usuarioId)) {
             if (t.getTipo().equals("Ingreso")) {
-                reporte.append(String.format("%s - %s - $%.2f - %s - %s\n",
+                reporte.append(String.format("%s - %s - S/%.2f - %s - %s\n",
                     t.getFecha(), t.getNombre(), t.getMonto(), t.getCategoria(), t.getNota()));
             }
         }
@@ -353,19 +353,19 @@ public class ControladorFinanzas {
         String categoriaMayorGasto = "";
         double mayorGasto = 0;
         for (Map.Entry<String, Double> entry : gastosPorCategoria.entrySet()) {
-            reporte.append(String.format("- %s: $%.2f\n", entry.getKey(), entry.getValue()));
+            reporte.append(String.format("- %s: S/%.2f\n", entry.getKey(), entry.getValue()));
             if (entry.getValue() > mayorGasto) {
                 mayorGasto = entry.getValue();
                 categoriaMayorGasto = entry.getKey();
             }
         }
         if (!categoriaMayorGasto.isEmpty()) {
-            reporte.append(String.format("Categoría con Mayor Gasto: %s ($%.2f)\n", categoriaMayorGasto, mayorGasto));
+            reporte.append(String.format("Categoría con Mayor Gasto: %s (S/%.2f)\n", categoriaMayorGasto, mayorGasto));
         }
         reporte.append("\nTransacciones Recientes (Gastos):\n");
         for (Transaccion t : modelo.getTransacciones(usuarioId)) {
             if (t.getTipo().equals("Egreso")) {
-                reporte.append(String.format("%s - %s - $%.2f - %s - %s\n",
+                reporte.append(String.format("%s - %s - S/%.2f - %s - %s\n",
                     t.getFecha(), t.getNombre(), t.getMonto(), t.getCategoria(), t.getNota()));
             }
         }
@@ -380,9 +380,9 @@ public class ControladorFinanzas {
             double progreso = Math.min(ahorros, montoObjetivo);
             double porcentajeProgreso = (progreso / montoObjetivo) * 100;
             double faltante = montoObjetivo - progreso;
-            reporte.append(String.format("%s - Objetivo: $%.2f\n", m.getNombre(), montoObjetivo));
-            reporte.append(String.format("   Progreso: $%.2f (%.2f%%)\n", progreso, porcentajeProgreso));
-            reporte.append(String.format("   Faltante: $%.2f\n", faltante));
+            reporte.append(String.format("%s - Objetivo: S/%.2f\n", m.getNombre(), montoObjetivo));
+            reporte.append(String.format("   Progreso: S/%.2f (%.2f%%)\n", progreso, porcentajeProgreso));
+            reporte.append(String.format("   Faltante: S/%.2f\n", faltante));
         }
 
         reportesView.setReporte(reporte.toString());
