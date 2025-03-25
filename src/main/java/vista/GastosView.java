@@ -14,7 +14,7 @@ public class GastosView extends JFrame {
 
     public GastosView() {
         setTitle("Smart Pocket - Registrar Gastos");
-        setSize(500, 450);
+        setSize(500, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
