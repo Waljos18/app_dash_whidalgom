@@ -14,7 +14,7 @@ public class IngresosView extends JFrame {
 
     public IngresosView() {
         setTitle("Smart Pocket - Registrar Ingresos");
-        setSize(500, 450);
+        setSize(500, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
