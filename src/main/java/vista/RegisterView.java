@@ -10,7 +10,7 @@ public class RegisterView extends JFrame {
     private JButton btnRegister;
 
     public RegisterView() {
-        setTitle("Smart Pocket - Sign Up");
+        setTitle("Smart Pocket - Registrarse");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new GridBagLayout());
@@ -21,12 +21,12 @@ public class RegisterView extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        JLabel lblSignUp = new JLabel("Sign Up");
+        JLabel lblSignUp = new JLabel("Registrar");
         lblSignUp.setFont(new Font("Segoe UI", Font.BOLD, 24));
         add(lblSignUp, gbc);
 
         gbc.gridy = 1;
-        JLabel lblEmail = new JLabel("Email");
+        JLabel lblEmail = new JLabel("Usuario");
         lblEmail.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         add(lblEmail, gbc);
 
@@ -37,7 +37,7 @@ public class RegisterView extends JFrame {
         add(txtEmail, gbc);
 
         gbc.gridy = 3;
-        JLabel lblPassword = new JLabel("Password");
+        JLabel lblPassword = new JLabel("Contraseña");
         lblPassword.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         add(lblPassword, gbc);
 
@@ -48,7 +48,7 @@ public class RegisterView extends JFrame {
         add(txtPassword, gbc);
 
         gbc.gridy = 5;
-        btnRegister = new JButton("Register");
+        btnRegister = new JButton("Registrar");
         btnRegister.setBackground(new Color(0, 33, 71));
         btnRegister.setForeground(Color.WHITE);
         btnRegister.setFont(new Font("Segoe UI", Font.BOLD, 14));

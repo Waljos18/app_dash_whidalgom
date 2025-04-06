@@ -12,7 +12,7 @@ public class LoginView extends JFrame {
     private JLabel lblSignUpLink;
 
     public LoginView() {
-        setTitle("Smart Pocket - Sign In");
+        setTitle("Smart Pocket - Iniciar sesión");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -28,7 +28,10 @@ public class LoginView extends JFrame {
         JLabel lblIcon = new JLabel();
         java.net.URL imgURL = getClass().getResource("/icons/wallet.png");
         if (imgURL != null) {
-            lblIcon.setIcon(new ImageIcon(imgURL));
+            ImageIcon originalIcon = new ImageIcon(imgURL);
+        // Escalamos la imagen a 32x32 píxeles, por ejemplo
+        Image scaledImage = originalIcon.getImage().getScaledInstance(72, 72, Image.SCALE_SMOOTH);
+        lblIcon.setIcon(new ImageIcon(scaledImage));
         } else {
             lblIcon.setText("Wallet Icon"); // Placeholder si el ícono no se encuentra
             lblIcon.setForeground(Color.WHITE);
@@ -51,7 +54,7 @@ public class LoginView extends JFrame {
         rightPanel.setLayout(new GridLayout(5, 1, 10, 10));
         rightPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        JLabel lblSignIn = new JLabel("Sign In");
+        JLabel lblSignIn = new JLabel("Iniciar sesión");
         lblSignIn.setFont(new Font("Arial", Font.BOLD, 20));
         rightPanel.add(lblSignIn);
 
@@ -68,17 +71,17 @@ public class LoginView extends JFrame {
         rightPanel.add(passwordPanel);
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        btnSignIn = new JButton("Sign In");
+        btnSignIn = new JButton("Ingresar");
         btnSignIn.setBackground(new Color(0, 33, 71));
         btnSignIn.setForeground(Color.WHITE);
-        btnClear = new JButton("Clear");
+        btnClear = new JButton("Limpiar");
         btnClear.setBackground(new Color(0, 33, 71));
         btnClear.setForeground(Color.WHITE);
         buttonPanel.add(btnSignIn);
         buttonPanel.add(btnClear);
         rightPanel.add(buttonPanel);
 
-        lblSignUpLink = new JLabel("<html><u>Don't have an account? Sign up here.</u></html>");
+        lblSignUpLink = new JLabel("<html><u>Crear una cuenta.</u></html>");
         lblSignUpLink.setForeground(new Color(0, 33, 71));
         lblSignUpLink.setCursor(new Cursor(Cursor.HAND_CURSOR));
         rightPanel.add(lblSignUpLink);
