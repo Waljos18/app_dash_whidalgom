@@ -17,19 +17,19 @@ public class LoginView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Panel lateral izquierdo (fondo azul oscuro)
+        
         JPanel leftPanel = new JPanel();
         leftPanel.setBackground(new Color(0, 33, 71)); // Azul oscuro similar al de la imagen
         leftPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(20, 20, 20, 20);
 
-        // Ícono de billetera (con manejo de error)
+        
         JLabel lblIcon = new JLabel();
         java.net.URL imgURL = getClass().getResource("/icons/wallet.png");
         if (imgURL != null) {
             ImageIcon originalIcon = new ImageIcon(imgURL);
-        // Escalamos la imagen a 32x32 píxeles, por ejemplo
+        
         Image scaledImage = originalIcon.getImage().getScaledInstance(72, 72, Image.SCALE_SMOOTH);
         lblIcon.setIcon(new ImageIcon(scaledImage));
         } else {

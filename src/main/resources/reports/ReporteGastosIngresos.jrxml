@@ -1,0 +1,139 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="ReporteGastosIngresos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0f3a3be-c4ff-4982-9226-8304e1c24257">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ControlGastosIngresosDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dHJhbnNhY2Npb25lcyAsMTUsMTUsNDU3MzBmYTAtMGJjZC00ODcxLTgwNDItNzcwMGU3MjNmNjBm&#xa;Ow=="/>
+	<query language="sql"><![CDATA[SELECT id,
+	tipo,
+	monto,
+	categoria,
+	fecha,
+	nombre,
+	nota,
+	usuario_id
+FROM transacciones
+ORDER BY fecha DESC]]></query>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="monto" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="monto"/>
+		<property name="com.jaspersoft.studio.field.label" value="monto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="categoria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="categoria"/>
+		<property name="com.jaspersoft.studio.field.label" value="categoria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="nota" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nota"/>
+		<property name="com.jaspersoft.studio.field.label" value="nota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<field name="usuario_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="usuario_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="usuario_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacciones"/>
+	</field>
+	<variable name="total_monto" calculation="Sum" class="java.lang.Double">
+		<expression><![CDATA[$F{monto}
+
+
+]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="008171d5-b6ac-4aa8-82be-d69b4798238e" x="180" y="20" width="270" height="40" fontSize="16.0" bold="true">
+			<text><![CDATA[Reporte de Gastos e Ingresos]]></text>
+		</element>
+		<element kind="image" uuid="75bd2dbf-5a89-445a-9987-daae447504cb" x="70" y="8" width="74" height="65">
+			<expression><![CDATA["C:/Users/Usuario/Documents/NetBeansProjects/app_gastos_whidalgom/ControlGastosIngresos/src/icons/wallet.png"]]></expression>
+		</element>
+		<element kind="textField" uuid="50d33fed-474e-4ce6-856e-3ba55a84dfaf" x="460" y="0" width="100" height="30" pattern="MMMMM dd, yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="a4619d30-c0bf-43df-8da4-2b84496e70d0" x="0" y="0" width="70" height="30">
+			<text><![CDATA[Tipo]]></text>
+		</element>
+		<element kind="staticText" uuid="b985187b-2bba-4a14-bfb7-6878c36ea414" x="80" y="0" width="70" height="30">
+			<text><![CDATA[Monto]]></text>
+		</element>
+		<element kind="staticText" uuid="a4e2ce5d-1488-4562-88c5-c694138899d7" x="160" y="0" width="70" height="30">
+			<text><![CDATA[Categoria]]></text>
+		</element>
+		<element kind="staticText" uuid="cd94da3d-7d95-400f-97d1-dea9d6c36fbb" x="250" y="0" width="80" height="30">
+			<text><![CDATA[Fecha]]></text>
+		</element>
+		<element kind="staticText" uuid="b6a5b393-7277-476e-91be-276870770f24" x="340" y="0" width="70" height="30">
+			<text><![CDATA[Nombre]]></text>
+		</element>
+		<element kind="staticText" uuid="ba12b146-ca98-47fa-b900-1c1362d162a5" x="420" y="0" width="70" height="30">
+			<text><![CDATA[Nota]]></text>
+		</element>
+		<element kind="staticText" uuid="ccbbd0b7-00b0-4cac-9e1e-a57d0cf0c7d9" x="510" y="0" width="40" height="30">
+			<text><![CDATA[User ID]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="d0d511bb-6b2f-4709-923d-d8df523d1473" x="0" y="10" width="70" height="30">
+				<expression><![CDATA[$F{tipo}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="206c29b0-e8df-461d-9099-7148eba727cf"/>
+			</element>
+			<element kind="textField" uuid="10f7718d-0a6b-4c17-a6fd-00332f3fab77" x="80" y="10" width="70" height="30">
+				<expression><![CDATA[$F{monto}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17ebc169-6413-4bf6-8409-4b2d126841cf"/>
+			</element>
+			<element kind="textField" uuid="3b4f9079-d655-445d-ba28-3a88d7b01384" x="160" y="10" width="80" height="30">
+				<expression><![CDATA[$F{categoria}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66fc31d3-c841-4d64-ba97-6003bf3b1e5a"/>
+			</element>
+			<element kind="textField" uuid="d930dbe7-fb0a-4608-a4f5-6bf3068d54d7" x="250" y="10" width="80" height="30">
+				<expression><![CDATA[$F{fecha}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c71029a-b1d2-4d2c-89ca-284095c68d1c"/>
+			</element>
+			<element kind="textField" uuid="54bb618e-d913-4e23-88db-fd7539a6b374" x="340" y="10" width="70" height="30">
+				<expression><![CDATA[$F{nombre}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cdbd1983-a5ab-456f-95e0-8817fe995097"/>
+			</element>
+			<element kind="textField" uuid="0b415164-10e1-435d-99e4-fe325ba747e3" x="420" y="10" width="70" height="30">
+				<expression><![CDATA[$F{nota}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="de07e428-f682-4196-a999-9cd0eb418acb"/>
+			</element>
+			<element kind="textField" uuid="34d21baf-5a28-4444-b2b8-7a96e83f9435" x="510" y="10" width="40" height="30">
+				<expression><![CDATA[$F{usuario_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f012bff-7cc4-4399-9016-57eb0674d4b4"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="staticText" uuid="13bb98dd-10db-4802-906b-397f7927b5da" x="90" y="14" width="100" height="30">
+			<text><![CDATA[Total :]]></text>
+		</element>
+		<element kind="textField" uuid="2b503694-4cc0-4a2f-aae9-6b1a74d82f47" x="230" y="14" width="100" height="30">
+			<expression><![CDATA[$V{total_monto}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="43" splitType="Stretch"/>
+</jasperReport>
